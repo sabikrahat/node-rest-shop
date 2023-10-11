@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-
 const mongoose = require("mongoose");
+
 const Product = require("../models/product");
 
 router.get("/", (req, res, next) => {
@@ -99,7 +99,7 @@ router.patch("/:productId", (req, res, next) => {
         //     { "propName": "price", "value": "Updated price" },
         // ]
     }
-    Product.update({ _id: id }, { $set: updateOps })
+    Product.updateOne({ _id: id }, { $set: updateOps })
         .exec()
         .then(result => {
             console.log(result);
@@ -123,7 +123,7 @@ router.patch("/:productId", (req, res, next) => {
 
 router.delete("/:productId", (req, res, next) => {
     const id = req.params.productId;
-    Product.remove({ _id: id })
+    Product.deleteOne({ _id: id })
         .exec()
         .then(result => {
             console.log(result);
