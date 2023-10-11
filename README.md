@@ -24,3 +24,4 @@ A Node.js RESTful API Tutorial Project (Build a simple shop API)
     - package.json
         - "start": "nodemon server.js" (add this line in scripts) 
 - npm install --save morgan (HTTP request logger middleware for node.js)
+- npm install --save body-parser (Parse incoming request bodies in a middleware before your handlers, available under the req.body property.)
