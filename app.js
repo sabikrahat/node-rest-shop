@@ -13,9 +13,13 @@ mongoose.connect(
     + process.env.MONGO_ATLAS_PWD +
     "@node-rest-shop.xv7vibr.mongodb.net/?retryWrites=true&w=majority",
     {
-        useMongoClient: true
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
     }
-);
+).catch(err => {
+    console.log(err);
+});
+mongoose.Promise = global.Promise;
 
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: false }));
