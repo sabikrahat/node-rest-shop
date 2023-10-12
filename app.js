@@ -4,6 +4,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 
+const userRoutes = require("./api/routes/user");
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 
@@ -48,6 +49,7 @@ app.use("/check", (req, res, next) => {
 });
 
 // Routes which should handle requests
+app.use("/user", userRoutes);
 app.use("/products", productRoutes);
 app.use("/orders", orderRoutes);
 

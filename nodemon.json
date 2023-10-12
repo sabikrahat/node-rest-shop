@@ -2,6 +2,7 @@
     "env": {
         "IP": "0.0.0.0",
         "PORT": 3000,
-        "MONGO_ATLAS_PWD": "node-rest-shop"
+        "MONGO_ATLAS_PWD": "node-rest-shop",
+        "JWT_KEY": "secret"
     }
 }
