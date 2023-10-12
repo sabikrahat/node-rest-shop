@@ -24,6 +24,9 @@ router.get("/", (req, res, next) => {
                         }
                     };
                 }),
+                total: docs.reduce((acc, cur) => {
+                    return acc + (parseFloat(cur.quantity) * parseFloat(cur.product.price));
+                }, 0),
             };
             console.log(response);
             return res.status(200).json(response);
