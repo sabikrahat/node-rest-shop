@@ -17,9 +17,8 @@ mongoose.connect(
         useNewUrlParser: true,
         useUnifiedTopology: true,
     }
-).catch(err => {
-    console.log(err);
-});
+).catch(err => { console.log(err); });
+
 mongoose.Promise = global.Promise;
 
 app.use(morgan("dev"));
@@ -55,7 +54,7 @@ app.use("/orders", orderRoutes);
 
 // Error handling
 app.use((req, res, next) => {
-    const error = new Error("Not found");
+    const error = new Error("Route Not found");
     error.status = 404;
     next(error);
 });
@@ -63,9 +62,7 @@ app.use((req, res, next) => {
 app.use((error, req, res, next) => {
     res.status(error.status || 500);
     return res.json({
-        error: {
-            message: error.message,
-        },
+        error: { message: error.message },
     });
 });
 
