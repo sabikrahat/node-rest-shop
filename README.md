@@ -29,3 +29,10 @@ A Node.js RESTful API Tutorial Project (Build a simple shop API)
 - npm install --save multer (handle multipart/form-data, which is primarily used for uploading files)
 - npm install --save bcrypt (A library to help you hash passwords.)
 - npm install --save jsonwebtoken (An implementation of JSON Web Tokens.)
+
+
+
+
+### Unistall package
+
+- npm uninstall --save <package-name>
