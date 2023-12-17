@@ -8,18 +8,8 @@ const userRoutes = require("./api/routes/user");
 const productRoutes = require("./api/routes/products");
 const orderRoutes = require("./api/routes/orders");
 
-// Connect to MongoDB
-mongoose.connect(
-    "mongodb+srv://node-rest-shop:"
-    + process.env.MONGO_ATLAS_PWD +
-    "@node-rest-shop.xv7vibr.mongodb.net/?retryWrites=true&w=majority",
-    {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    }
-).catch(err => { console.log(err); });
-
-mongoose.Promise = global.Promise;
+// Connect to PostgreSQL database
+// const db = require("./db.config.js");
 
 app.use(morgan("dev"));
 app.use("/uploads", express.static("uploads"));
